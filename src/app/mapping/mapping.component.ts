@@ -102,10 +102,18 @@ export class MappingComponent implements OnInit {
             width: 100
 		},
 		{
-            headerName: "Status",
-            field: "status",
-            width: 100
-        }
+				headerName:  "Status",
+				field:  "status",
+				width:  130,
+				cellStyle:  function  (params) {
+					var  color;
+					if  (params.value  ==  'Data Match') {
+						color  =  '#6bf012';
+					}
+					else  { color  =  '#e44119'; }
+					return  { backgroundColor: color, color:  '#ffffff'  };
+				}
+			}
 
     ];
     this.gridOptions.rowData = [{
